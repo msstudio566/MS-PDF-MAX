@@ -1,0 +1,21 @@
+name: Build MS PDF MAX APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract project ZIP
+        run: |
+          unzip MS_PDF_MAX_Android_Project.zip -d extracted
+          find extracted -name settings.gradle.kts -print
+
+      - name: Show project files
+        run: |
+          find extracted -maxdepth 4 -type f | head -100
