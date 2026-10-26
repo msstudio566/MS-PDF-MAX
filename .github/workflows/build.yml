@@ -15,7 +15,3 @@ steps:
     run: |
       echo "Repository files:"
       find . -maxdepth 3 -type f | head -100
-
-  - name: Find Android project
-    run: |
-      find . -type f -name "settings.gradle" -o -name "settings.gradle.kts"
